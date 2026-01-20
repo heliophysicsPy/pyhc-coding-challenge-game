@@ -21,12 +21,6 @@
                 "hint": "Pass two things to the hapi() function."
             },
             {
-                "task_number": 4,
-                "title": "List CTIPe Model Variables",
-                "description": "Import the Kamodo model wrapper and list all variables available for the model 'CTIPe'",
-                "hint": "Use the Model_Variables() function."
-            },
-            {
                 "task_number": 5,
                 "title": "Set SPEDAS_DATA_DIR & Import pySPEDAS, PyTplot",
                 "description": "Write a Python script that successfully sets the SPEDAS_DATA_DIR (which acts as a root data directory for all missions) then imports the pySPEDAS and pytplot package.",
@@ -65,7 +59,7 @@
             {
                 "task_number": 11,
                 "title": "Count Closed PyHC Package Issues",
-                "description": "Find and report the number of closed issues for all core PyHC packages: HAPI Client, Kamodo, PlasmaPy, pysat, pySPEDAS, SpacePy, and SunPy.",
+                "description": "Find and report the number of closed issues for these core PyHC packages: HAPI Client, PlasmaPy, pysat, pySPEDAS, SpacePy, and SunPy.",
                 "hint": "Check the packages' GitHub pages."
             },
             {
@@ -77,7 +71,7 @@
             {
                 "task_number": 13,
                 "title": "Identify PyHC Package License Types",
-                "description": "Find the software license in each core PyHC package repository and report what kind of license it is: HAPI Client, Kamodo, PlasmaPy, pysat, pySPEDAS, SpacePy, and SunPy.",
+                "description": "Find the software license in each core PyHC package repository and report what kind of license it is: HAPI Client, PlasmaPy, pysat, pySPEDAS, SpacePy, and SunPy.",
                 "hint": "Check the packages' GitHub repos."
             }
         ]
@@ -102,13 +96,6 @@
                 "title": "Reading OMNI HAPI Data",
                 "description": "Use the hapiclient to download exactly one hour of the following data:<br><ul><li>Server: CDAWeb</li><li>Dataset: \"OMNI2_H0_MRG1HR\"</li><li>Parameters: \"DST1800\"</li><li>Start time: Midnight September 1st, 2003 UTC</li><li>Stop time: Midnight September 2nd, 2003 UTC</li></ul>",
                 "hint": "Look into what parameters the hapi() function accepts."
-            },
-            {
-                "task_number": 17,
-                "title": "Functionalize a Dataset with Kamodo",
-                "description": "Functionalize the following new dataset made up of numpy arrays for time, lon, lat, and a variable 'speed' in km/s, then display the Kamodo object:<br><br><pre><code>import numpy as np<br>coord_dict = {'time': {'units': 'hr', 'data': np.linspace(0., 24., 25)},<br>             'lon': {'units': 'deg', 'data': np.linspace(-180., 180., 37)},<br>             'lat': {'units': 'deg', 'data': np.linspace(-90., 90., 19)}}<br>var_dict = {'speed': {'units': 'km/s', 'data': np.random.RandomState(1).rand(25, 37, 19)}}</code></pre>",
-                "code": "<pre><code>import numpy as np<br>coord_dict = {'time': {'units': 'hr', 'data': np.linspace(0., 24., 25)},<br>             'lon': {'units': 'deg', 'data': np.linspace(-180., 180., 37)},<br>             'lat': {'units': 'deg', 'data': np.linspace(-90., 90., 19)}}<br>var_dict = {'speed': {'units': 'km/s', 'data': np.random.RandomState(1).rand(25, 37, 19)}}</code></pre>",
-                "hint": "Use the Functionalize_Dataset() function."
             },
             {
                 "task_number": 18,
@@ -143,7 +130,7 @@
             {
                 "task_number": 23,
                 "title": "Find the Citations for PyHC Package Repositories",
-                "description": "Find and report both the APA citation and DOI for the following PyHC packages: HAPI Client, Kamodo, PlasmaPy, pysat, SpacePy, SunPy.",
+                "description": "Find and report both the APA citation and DOI for the following PyHC packages: HAPI Client, PlasmaPy, pysat, SpacePy, SunPy.",
                 "hint": "Check Zenodo."
             }
         ]
@@ -168,19 +155,6 @@
                 "title": "Plot HAPI data with pySPEDAS/PyTplot",
                 "description": "Using pySPEDAS, load into tplot variables the \"SW_P_Den\" and \"SW_V\" parameters of the \"GE_K0_CPI\" dataset from CDAWeb, in the time range 12:00:40Z 1992-09-09 to 00:00:00.000Z 1992-09-10. Then plot those parameters with PyTplot.",
                 "hint": "Use pySPEDAS's pyhapi() function then PyTplot's tplot() function."
-            },
-            {
-                "task_number": 27,
-                "title": "Generate an Interactive Plot of a Kamodo Object",
-                "description": "Functionalize the following new dataset made up of numpy arrays for time, lon, lat, and a variable 'speed' in km/s, then generate an interactive plot of the result:<br><pre><code>import numpy as np<br>coord_dict = {'time': {'units': 'hr', 'data': np.linspace(0., 24., 25)},<br>             'lon': {'units': 'deg', 'data': np.linspace(-180., 180., 37)},<br>             'lat': {'units': 'deg', 'data': np.linspace(-90., 90., 19)}}<br>var_dict = {'speed': {'units': 'km/s', 'data': np.random.RandomState(1).rand(25, 37, 19)}}</code></pre>",
-                "code": "<pre><code>import numpy as np<br>coord_dict = {'time': {'units': 'hr', 'data': np.linspace(0., 24., 25)},<br>             'lon': {'units': 'deg', 'data': np.linspace(-180., 180., 37)},<br>             'lat': {'units': 'deg', 'data': np.linspace(-90., 90., 19)}}<br>var_dict = {'speed': {'units': 'km/s', 'data': np.random.RandomState(1).rand(25, 37, 19)}}</code></pre>",
-                "hint": "Kamodo objects have a plot() function."
-            },
-            {
-                "task_number": 28,
-                "title": "Extract GITM Data",
-                "description": "Extract the value of 'TEC' from a provided GITM run at 2015-03-14 01:00 UT, 30 degrees longitude, and 75 degrees latitude. NOTE: this will require local model output at '/home/jovyan/scratch_space/data/GITM/GITM_small_test_data/'.",
-                "hint": "First make a Kamodo object with requested variables 'rho_n' and 'TEC', then extract from it."
             },
             {
                 "task_number": 29,
@@ -247,12 +221,6 @@
                 "description": "Starting with the following program, (1) Print out the GSE and GSM values reported by SSCWeb, (2) Use SpacePy to convert the GSE values to GSM. <br><pre><code>import spacepy.coordinates as sc<br>from spacepy.time import Ticktock<br><br>from hapiclient import hapi, hapitime2datetime<br><br>server     = 'https://hapi-server.org/servers/SSCWeb/hapi'<br>dataset    = 'swarma'<br>parameters = 'X_GSE,Y_GSE,Z_GSE,X_GSM,Y_GSM,Z_GSM'<br>start      = '2013-11-26T00:00:00Z'<br>stop       = '2013-11-26T00:01:00Z'<br><br>opts       = {'logging': True, 'usecache': True, 'cachedir': './hapicache'}<br><br>data, meta = hapi(server, dataset, parameters, start, stop)<br>print(data)</code></pre>",
                 "code": "<pre><code>import spacepy.coordinates as sc<br>from spacepy.time import Ticktock<br><br>from hapiclient import hapi, hapitime2datetime<br><br>server     = 'https://hapi-server.org/servers/SSCWeb/hapi'<br>dataset    = 'swarma'<br>parameters = 'X_GSE,Y_GSE,Z_GSE,X_GSM,Y_GSM,Z_GSM'<br>start      = '2013-11-26T00:00:00Z'<br>stop       = '2013-11-26T00:01:00Z'<br><br>opts       = {'logging': True, 'usecache': True, 'cachedir': './hapicache'}<br><br>data, meta = hapi(server, dataset, parameters, start, stop)<br>print(data)</code></pre>",
                 "hint": "Use HAPI's hapitime2datetime() function, and SpacePy's sc.Coords(), Ticktock(), convert() functions."
-            },
-            {
-                "task_number": 39,
-                "title": "Extract and Plot GITM Data",
-                "description": "Extract 'rho_n' and 'TEC' from a provided GITM run between 2015-03-14 00:00 and 2015-03-14 01:30 along the 'cnofs' satellite trajectory, then functionalize it in Kamodo and plot TEC. NOTE: this will require local model output at '/home/jovyan/scratch_space/data/GITM/GITM_small_test_data/'.",
-                "hint": "Use the SatelliteFlythrough.RealFlight() function."
             },
             {
                 "task_number": 40,
