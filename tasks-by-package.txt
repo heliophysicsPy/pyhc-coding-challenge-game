@@ -1,4 +1,4 @@
-HAPI Client [11]
+HAPI Client [11] (don't anticipate any major changes to the notebooks)
   - 1 List Available HAPI Server URLs
   - 2 List Available CDAWeb Datasets
   - 3 Reading OMNI HAPI Metadata
@@ -11,7 +11,7 @@ HAPI Client [11]
   - 37 Converting to Pandas DataFrame
   - 38 Coordinate Transform with SpacePy (also SpacePy)
 
-pySPEDAS [11]
+pySPEDAS [11] (Updated notebooks expected by March 31)
   - 5 Set SPEDAS_DATA_DIR & Import pySPEDAS, PyTplot
   - 6 Load and Plot MMS FGM data
   - 18 Extract Data From tplot Variables
