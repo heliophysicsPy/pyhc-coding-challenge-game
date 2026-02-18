@@ -40,7 +40,7 @@ SunPy [7]
   - 43 Difference Image
   - 45 Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images
 
-SpacePy [1]
+SpacePy [1] (not sure when they'll update notebooks)
   - 38 Coordinate Transform with SpacePy
 
 PlasmaPy [0]
