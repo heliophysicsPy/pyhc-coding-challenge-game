@@ -21,6 +21,12 @@
                 "hint": "Pass two things to the hapi() function."
             },
             {
+                "task_number": 4,
+                "title": "Reading Basic Particle Information",
+                "description": "Using PlasmaPy, print the atomic number of iron (\"Fe\") and the element name associated with atomic number 26.",
+                "hint": "Use `atomic_number()` and `element_name()`."
+            },
+            {
                 "task_number": 5,
                 "title": "Set SPEDAS_DATA_DIR & Import pySPEDAS, PyTplot",
                 "description": "Write a Python script that successfully sets the SPEDAS_DATA_DIR (which acts as a root data directory for all missions) then imports the pySPEDAS and pytplot package.",
@@ -98,6 +104,12 @@
                 "hint": "Look into what parameters the hapi() function accepts."
             },
             {
+                "task_number": 17,
+                "title": "Reading Particle Properties",
+                "description": "Using PlasmaPy, determine the charge number and particle mass of the ion \"Fe-56 13+\".",
+                "hint": "Use `charge_number()` and `particle_mass()`."
+            },
+            {
                 "task_number": 18,
                 "title": "Extract Data From tplot Variables",
                 "description": "Using pySPEDAS/PyTplot, load MMS FGM survey data for probe 1, for March 24, 2023. Then extract the MMS FGM times and data values from tplot variables into Python lists.",
@@ -155,6 +167,18 @@
                 "title": "Plot HAPI data with pySPEDAS/PyTplot",
                 "description": "Using pySPEDAS, load into tplot variables the \"SW_P_Den\" and \"SW_V\" parameters of the \"GE_K0_CPI\" dataset from CDAWeb, in the time range 12:00:40Z 1992-09-09 to 00:00:00.000Z 1992-09-10. Then plot those parameters with PyTplot.",
                 "hint": "Use pySPEDAS's pyhapi() function then PyTplot's tplot() function."
+            },
+            {
+                "task_number": 27,
+                "title": "Ionization and Recombination with Particle Objects",
+                "description": "Using PlasmaPy particle objects, create a neutral deuterium particle and ionize it once. Then create an alpha particle and recombine it twice. Print the resulting particles.",
+                "hint": "Use `Particle()`, `ionize()`, and `recombine()`."
+            },
+            {
+                "task_number": 28,
+                "title": "Calculating Fusion Energy",
+                "description": "Using PlasmaPy, calculate the energy released by the deuteron-triton fusion reaction \"D+ + T+ -> alpha + n\" and express the result in MeV.",
+                "hint": "Create `Particle` objects, use the `>` operator, and convert the result with `.to(\"MeV\")`."
             },
             {
                 "task_number": 29,
@@ -223,6 +247,12 @@
                 "hint": "Use HAPI's hapitime2datetime() function, and SpacePy's sc.Coords(), Ticktock(), convert() functions."
             },
             {
+                "task_number": 39,
+                "title": "Magnetospheric Plasma Scales",
+                "description": "Assume a plasma with n = 1 cm^-3, B = 5 nT, and T = 10^4.5 K. Using PlasmaPy, calculate the proton inertial length, electron inertial length, proton gyroradius, electron gyroradius, and lower hybrid frequency. Report the lengths in km and the frequency in Hz.",
+                "hint": "Use `inertial_length()`, `gyroradius()`, and `lower_hybrid_frequency()`. Pass `to_hz=True` to `lower_hybrid_frequency()` to get the result in Hz."
+            },
+            {
                 "task_number": 40,
                 "title": "T89 Field Modeling Versus THEMIS Observations",
                 "description": "Compare T89 model values to real THEMIS observations. Using pySPEDAS, load THEMIS state data for probe A, 2023-03-24, in GSM coordinates. Then, using the T89 model, generate the expected field at the THEMIS-A times and GSM positions (using the default model parameters). Then load THEMIS-A FGM spin fit data for the same time range. Calculate the difference between the observed and modeled field variables using <code>pytplot.subtract()</code>. Set the <code>yrange</code> of the difference variable to <code>[-200.0, 200.0] nT</code>. Plot the position variable, modeled field variable, observed field variable, and observed-modeled field difference.",
@@ -263,6 +293,12 @@
                 "title": "Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images",
                 "description": "As solar phenomena are often studied from multiple viewpoints to gain a three-dimensional understanding, your task is to use SunPy and the <code>reproject</code> package to fetch and plot images of the sun from both SDO AIA and STEREO EUVI, showing the solar limb from both perspectives on both images, and to reproject their views. Do the following:<br><ol><li>Download an image of the sun in the 193 Ångstrom wavelength from SDO AIA at the timestamp 2012-06-01/00:00:07.</li><li>Download an image of the sun in the 195 Ångstrom wavelength from STEREO EUVI at the timestamp 2012-06-01/00:05:30.</li><li>Resample the images to 512x512 pixels to reduce memory consumption.</li><li>Plot them side by side, highlighting the solar limb as seen by both instruments in each.</li><li>Use the <code>reproject</code> library to reproject the EUVI image to the viewpoint of the AIA.</li><li>And vice versa, reproject the AIA image to the viewpoint of the EUVI (effectively showing how each spacecraft would see the sun's region covered by the other).</li><li>Plot the reprojected images side by side for comparison.</li></ol>",
                 "hint": "Use SunPy's Fido interface to fetch the images, and the <code>reproject_to()</code> method to reproject one image to the other's perspective. Draw the solar limb in each plot for both the original and reprojected images to visualize the changes in perspective. To ensure the perspectives align correctly, you may need to adjust the metadata of one image to match the other's reference solar radius (<code>rsun_ref</code>) before reprojection. Images as seen from the other's perspective will appear as partial slices of the sphere that is the sun."
+            },
+            {
+                "task_number": 46,
+                "title": "Compute OMNI Plasma Beta with PlasmaPy",
+                "description": "Using the HAPI client, download the following OMNI data from CDAWeb for 2003-09-01T00:00:00Z to 2003-09-02T00:00:00Z: ABS_B1800, T1800, N1800, and Beta1800. Convert the magnetic field, proton temperature, and proton density arrays into Astropy quantities, use PlasmaPy's `beta()` to calculate plasma beta at each timestamp, then plot your PlasmaPy beta time series together with the OMNI Beta1800 time series. The two curves will not line up \u2014 explain why.",
+                "hint": "Use `hapi()`, `hapitime2datetime()`, and PlasmaPy's `beta()`. The HAPI metadata contains parameter units and fill values. Compare PlasmaPy's single-species formula `n*k_B*T / (B^2 / (2*mu_0))` with OMNI's definition `[(T*4.16e-5) + 5.34] * Np / B^2`. PlasmaPy's `beta()` only accounts for proton thermal pressure, while OMNI's `Beta1800` adds a fixed electron contribution \u2014 so expect the PlasmaPy series to sit below OMNI's."
             }
         ]
     }

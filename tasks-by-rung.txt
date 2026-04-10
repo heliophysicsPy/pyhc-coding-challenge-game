@@ -2,6 +2,7 @@ Rung 1
 - 1 — List Available HAPI Server URLs — HAPI Client
 - 2 — List Available CDAWeb Datasets — HAPI Client
 - 3 — Reading OMNI HAPI Metadata — HAPI Client
+- 4 — Reading Basic Particle Information — PlasmaPy
 - 5 — Set SPEDAS_DATA_DIR & Import pySPEDAS, PyTplot — pySPEDAS/PyTplot
 - 6 — Load and Plot MMS FGM data — pySPEDAS/PyTplot
 - 7 — Set the pysat “data_dirs” Parameter — pysat
@@ -16,6 +17,7 @@ Rung 2
 - 14 — Reading ACE HAPI Metadata — HAPI Client
 - 15 — Reading ACE HAPI Data — HAPI Client
 - 16 — Reading OMNI HAPI Data — HAPI Client
+- 17 — Reading Particle Properties — PlasmaPy
 - 18 — Extract Data From tplot Variables — pySPEDAS/PyTplot
 - 19 — Plot Six Hours of Parker Solar Probe data — pySPEDAS/PyTplot
 - 20 — Print a Test pysat Instrument — pysat
@@ -27,6 +29,8 @@ Rung 3
 - 24 — Exploring HAPI Data and Metadata — HAPI Client
 - 25 — Plotting HAPI Data — HAPI Client (hapiplot)
 - 26 — Plot HAPI data with pySPEDAS/PyTplot — pySPEDAS/PyTplot (pyhapi)
+- 27 — Ionization and Recombination with Particle Objects — PlasmaPy
+- 28 — Calculating Fusion Energy — PlasmaPy
 - 29 — pySPEDAS/PyTplot: Use Simple Analysis Tool — pySPEDAS/PyTplot
 - 30 — PyTplot Plot Customization: Line Colors — pySPEDAS/PyTplot
 - 31 — Magnetic Field Modeling: T89 Model — pySPEDAS (geopack/T89)
@@ -39,6 +43,7 @@ Rung 4
 - 36 — Plotting Total Solar Irradiance HAPI Data — HAPI Client (hapiplot)
 - 37 — Converting to Pandas DataFrame — HAPI Client (hapitime2datetime)
 - 38 — Coordinate Transform with SpacePy — HAPI Client; SpacePy
+- 39 — Magnetospheric Plasma Scales — PlasmaPy
 - 40 — T89 Field Modeling Versus THEMIS Observations — pySPEDAS/PyTplot (geopack T89)
 - 41 — T96 Field Modeling Versus MMS Observations — pySPEDAS/PyTplot (geopack T96)
 - 42 — Make a Movie of Today’s SDO AIA Solar Imagery — SunPy
@@ -47,3 +52,4 @@ Rung 4
 Rung 5
 - 44 — Interpolating Time — HAPI Client; SpacePy (toolbox interpol); plus pandas/NumPy interpolation
 - 45 — Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images — SunPy (with reproject)
+- 46 — Compute OMNI Plasma Beta with PlasmaPy — PlasmaPy; HAPI Client

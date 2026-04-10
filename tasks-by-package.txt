@@ -1,4 +1,4 @@
-HAPI Client [11] (don't anticipate any major changes to the notebooks)
+HAPI Client [12] (don't anticipate any major changes to the notebooks)
   - 1 List Available HAPI Server URLs
   - 2 List Available CDAWeb Datasets
   - 3 Reading OMNI HAPI Metadata
@@ -10,6 +10,7 @@ HAPI Client [11] (don't anticipate any major changes to the notebooks)
   - 36 Plotting Total Solar Irradiance HAPI Data
   - 37 Converting to Pandas DataFrame
   - 38 Coordinate Transform with SpacePy (also SpacePy)
+  - 46 Compute OMNI Plasma Beta with PlasmaPy (also PlasmaPy)
 
 pySPEDAS [11] (Updated notebooks expected by March 31)
   - 5 Set SPEDAS_DATA_DIR & Import pySPEDAS, PyTplot
@@ -43,8 +44,13 @@ SunPy [7]
 SpacePy [1] (not sure when they'll update notebooks)
   - 38 Coordinate Transform with SpacePy
 
-PlasmaPy [0]
-  - <NONE!>
+PlasmaPy [6]
+  - 4 Reading Basic Particle Information
+  - 17 Reading Particle Properties
+  - 27 Ionization and Recombination with Particle Objects
+  - 28 Calculating Fusion Energy
+  - 39 Magnetospheric Plasma Scales
+  - 46 Compute OMNI Plasma Beta with PlasmaPy (also HAPI Client)
 
 Misc. (cross-package or not a PyHC lib) [6]
   - 11 Count Closed PyHC Package Issues (HAPI, PlasmaPy, pysat, pySPEDAS, SpacePy, SunPy)
