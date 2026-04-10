@@ -1,0 +1,144 @@
+PyHC Challenge Ladder Solution Audit Findings
+Generated: 2026-04-10
+
+Scope:
+Audited the current solution notebooks in this repo against the local current PyHC package checkouts in ../pyhc-chat-cli/pyhc_packages and the maintained summer-school materials in ../summer-school-24 on the 2026-updates branch. No solution notebooks were edited.
+
+Findings:
+
+1. Task 28 is genuinely broken.
+
+The stored solution imports:
+
+    from pyspedas.hapi.hapi import hapi as pyhapi
+
+Evidence:
+- solutions/Rung 3.ipynb#L530
+- ../pyhc-chat-cli/pyhc_packages/pyspedas/pyspedas/__init__.py#L160
+- ../pyhc-chat-cli/pyhc_packages/pyspedas/pyspedas/projects/swarm/load.py#L3
+- ../summer-school-24/audit/findings.json#L179
+
+Current pySPEDAS exposes that loader from pyspedas.hapi_tools.hapi and re-exports it at top level. The summer-school audit already flags the same import as a current failure.
+
+Proposed fix:
+Use either:
+
+    from pyspedas import hapi as pyhapi
+
+or:
+
+    from pyspedas.hapi_tools.hapi import hapi as pyhapi
+
+
+2. Task 22 is internally inconsistent and should be treated as out-of-date.
+
+The title says pysatNASA, the description says pysatSpaceWeather, and the code still contains unresolved TODO comments about switching to pysatNASA.
+
+Evidence:
+- solutions/Rung 2.ipynb#L492
+- solutions/Rung 2.ipynb#L493
+- solutions/Rung 2.ipynb#L770
+- solutions/Rung 2.ipynb#L780
+- ../summer-school-24/ITM-pysat-kamodo/pysat_and_kamodo.ipynb#L79
+
+Current 2026-updates material registers pysatNASA.instruments, so the least invasive ladder fix is to standardize this task on pysatNASA.
+
+Proposed fix:
+Make the title, description, hint, and solution code all target pysatNASA. Replace the pysatSpaceWeather import and registration with pysatNASA.
+
+
+3. Task 45 is not a valid canonical solution as written.
+
+The task text asks for "AIA 0095 A", but the solution code queries 171 Angstrom data.
+
+Evidence:
+- solutions/Rung 4.ipynb#L682
+- solutions/Rung 4.ipynb#L719
+- ../pyhc-chat-cli/pyhc_packages/sunpy/docs/tutorial/acquiring_data/index.rst#L354
+- ../pyhc-chat-cli/pyhc_packages/sunpy/docs/tutorial/acquiring_data/index.rst#L360
+
+Current SunPy examples/docs show AIA 94 Angstrom and 193 Angstrom channels, not 95 Angstrom.
+
+Proposed fix:
+Either change the task to 171 Angstrom to match the code, or keep the hot-channel intent and rewrite the query to AIA 94 Angstrom.
+
+
+4. Task 46 needs correction.
+
+The solution searches AIA with 195 Angstrom:
+
+    a.Instrument.aia, a.Wavelength(195*u.angstrom)
+
+But current SunPy examples pair AIA with 193 Angstrom and EUVI with 195 Angstrom.
+
+Evidence:
+- solutions/Rung 4.ipynb#L786
+- ../pyhc-chat-cli/pyhc_packages/sunpy/examples/map_transformations/reprojection_different_observers.py#L23
+- ../pyhc-chat-cli/pyhc_packages/sunpy/examples/map/difference_images.py#L21
+
+Proposed fix:
+Use AIA 193 Angstrom if this remains an SDO/AIA task, or change the instrument to EUVI if the task should use 195 Angstrom.
+
+
+5. Task 24's citation solution is stale.
+
+The stored solution hard-codes 2021 to 2024 version-specific citations.
+
+Evidence:
+- solutions/Rung 2.ipynb#L928
+- solutions/Rung 2.ipynb#L932
+- solutions/Rung 2.ipynb#L935
+- solutions/Rung 2.ipynb#L938
+- solutions/Rung 2.ipynb#L941
+
+Current citation metadata is available from:
+- ../pyhc-chat-cli/pyhc_packages/client-python/README.md#L1
+- ../pyhc-chat-cli/pyhc_packages/PlasmaPy/src/plasmapy/__init__.py#L63
+- ../pyhc-chat-cli/pyhc_packages/pysat/docs/citing.rst#L6
+- ../pyhc-chat-cli/pyhc_packages/spacepy/README.md#L50
+- ../pyhc-chat-cli/pyhc_packages/sunpy/sunpy/CITATION.rst#L17
+
+Proposed fix:
+Derive the expected answer from current package citation metadata instead of hard-coding release-specific citation strings in the solution notebook.
+
+
+6. Task 13 has at least one wrong answer.
+
+The SpacePy line gives "Triad National Security, LLC" as the license type. That is the copyright holder, not the license type.
+
+Evidence:
+- solutions/Rung 1.ipynb#L2229
+- ../pyhc-chat-cli/pyhc_packages/spacepy/LICENSE.md#L1
+- ../pyhc-chat-cli/pyhc_packages/spacepy/pyproject.toml#L23
+
+Current packaging metadata classifies SpacePy under a Python Software Foundation style license.
+
+Proposed fix:
+Normalize the SpacePy answer from LICENSE.md or pyproject.toml metadata. Do not use the organization name as the license label.
+
+
+7. Task 11 is not really solved.
+
+The task asks for counts of closed issues, but the solution cell only lists GitHub query URLs.
+
+Evidence:
+- solutions/Rung 1.ipynb#L2142
+- solutions/Rung 1.ipynb#L2163
+- solutions/Rung 1.ipynb#L2164
+- solutions/Rung 1.ipynb#L2165
+- solutions/Rung 1.ipynb#L2166
+
+Proposed fix:
+Either turn this into a GitHub API or gh-based count query, or redefine the task as "find the closed-issues query page" rather than "report the number".
+
+
+Additional notes:
+
+- I used ../summer-school-24 on the 2026-updates branch and checked its audit/ folder.
+- Beyond the findings above, the rest of the ladder mostly still lines up with current APIs based on source inspection.
+- Some pySPEDAS cells are stylistically dated because current docs prefer pyspedas.projects.*:
+  - ../pyhc-chat-cli/pyhc_packages/pyspedas/docs/source/index.rst#L25
+  - ../pyhc-chat-cli/pyhc_packages/pyspedas/docs/source/index.rst#L26
+  - ../pyhc-chat-cli/pyhc_packages/pyspedas/docs/source/index.rst#L27
+  - ../pyhc-chat-cli/pyhc_packages/pyspedas/docs/source/index.rst#L28
+- I did not execute every remote-data workflow end-to-end, so provider-side drift beyond these notebook-level issues is still possible.
