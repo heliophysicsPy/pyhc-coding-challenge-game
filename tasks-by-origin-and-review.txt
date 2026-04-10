@@ -5,13 +5,18 @@ Notes
 - A task may appear in both the "AI-generated" section and the "Maintainer-reviewed/approved" section.
 - Tasks not listed under "AI-generated" are currently treated as pre-tracker / not marked AI-generated.
 
-AI-generated [6] (all currently pending maintainer review)
+AI-generated [11] (all currently pending maintainer review)
 - 4 - Reading Basic Particle Information - PlasmaPy
-- 17 - Reading Particle Properties - PlasmaPy
-- 27 - Ionization and Recombination with Particle Objects - PlasmaPy
-- 28 - Calculating Fusion Energy - PlasmaPy
-- 39 - Magnetospheric Plasma Scales - PlasmaPy
-- 46 - Compute OMNI Plasma Beta with PlasmaPy - PlasmaPy
+- 14 - Converting Ticktock to Astropy Time - SpacePy
+- 18 - Reading Particle Properties - PlasmaPy
+- 25 - Reading MMS Quaternion Metadata - SpacePy
+- 29 - Ionization and Recombination with Particle Objects - PlasmaPy
+- 30 - Calculating Fusion Energy - PlasmaPy
+- 38 - Rotating MMS Positions from GSE to GSM - SpacePy
+- 42 - Magnetospheric Plasma Scales - PlasmaPy
+- 47 - Transforming MMS FGM Data to GSM - SpacePy
+- 50 - Compute OMNI Plasma Beta with PlasmaPy - PlasmaPy
+- 51 - Tracking MMS from Bear Mountain - SpacePy
 
 Maintainer-reviewed/approved [0]
 - <NONE YET>
@@ -22,38 +27,38 @@ Pre-tracker / not marked AI-generated [40]
 - 3 - Reading OMNI HAPI Metadata
 - 5 - Set SPEDAS_DATA_DIR & Import pySPEDAS, PyTplot
 - 6 - Load and Plot MMS FGM data
-- 7 - Set the pysat `data_dirs` Parameter
+- 7 - Set the pysat "data_dirs" Parameter
 - 8 - Display Available pysatMadrigal Instruments
 - 9 - List Available SunPy Remote Data Sources
 - 10 - List Available SunPy Instruments
 - 11 - Count Closed PyHC Package Issues
 - 12 - Find PyHC Package Repository Contribution Rules
 - 13 - Identify PyHC Package License Types
-- 14 - Reading ACE HAPI Metadata
-- 15 - Reading ACE HAPI Data
-- 16 - Reading OMNI HAPI Data
-- 18 - Extract Data From tplot Variables
-- 19 - Plot Six Hours of Parker Solar Probe data
-- 20 - Print a Test pysat Instrument
-- 21 - Register pysatNASA Instruments with pysat
-- 22 - Search for SDO AIA Data
-- 23 - Find the Citations for PyHC Package Repositories
-- 24 - Exploring HAPI Data and Metadata
-- 25 - Plotting HAPI Data
-- 26 - Plot HAPI data with pySPEDAS/PyTplot
-- 29 - pySPEDAS/PyTplot: Use Simple Analysis Tool
-- 30 - PyTplot Plot Customization: Line Colors
-- 31 - Magnetic Field Modeling: T89 Model
-- 32 - Magnetic Field Modeling: T96 model
-- 33 - Create an ICON IVM Instrument and Load Data
-- 34 - Plot the Latest Solar Image from SDO AIA
-- 35 - Time String Conversions
-- 36 - Plotting Total Solar Irradiance HAPI Data
-- 37 - Converting to Pandas DataFrame
-- 38 - Coordinate Transform with SpacePy
-- 40 - T89 Field Modeling Versus THEMIS Observations
-- 41 - T96 Field Modeling Versus MMS Observations
-- 42 - Make a Movie of Today's SDO AIA Solar Imagery
-- 43 - Difference Image
-- 44 - Interpolating Time
-- 45 - Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images
+- 15 - Reading ACE HAPI Metadata
+- 16 - Reading ACE HAPI Data
+- 17 - Reading OMNI HAPI Data
+- 19 - Extract Data From tplot Variables
+- 20 - Plot Six Hours of Parker Solar Probe data
+- 21 - Print a Test pysat Instrument
+- 22 - Register pysatNASA Instruments with pysat
+- 23 - Search for SDO AIA Data
+- 24 - Find the Citations for PyHC Package Repositories
+- 26 - Exploring HAPI Data and Metadata
+- 27 - Plotting HAPI Data
+- 28 - Plot HAPI data with pySPEDAS/PyTplot
+- 31 - pySPEDAS/PyTplot: Use Simple Analysis Tool
+- 32 - PyTplot Plot Customization: Line Colors
+- 33 - Magnetic Field Modeling: T89 Model
+- 34 - Magnetic Field Modeling: T96 model
+- 35 - Create an ICON IVM Instrument and Load Data
+- 36 - Plot the Latest Solar Image from SDO AIA
+- 37 - Time String Conversions
+- 39 - Plotting Total Solar Irradiance HAPI Data
+- 40 - Converting to Pandas DataFrame
+- 41 - Coordinate Transform with SpacePy
+- 43 - T89 Field Modeling Versus THEMIS Observations
+- 44 - T96 Field Modeling Versus MMS Observations
+- 45 - Make a Movie of Today's SDO AIA Solar Imagery
+- 46 - Difference Image
+- 48 - Interpolating Time
+- 49 - Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images
