@@ -85,6 +85,12 @@
                 "description": "Using SpacePy, create a `Ticktock` object for `2000-01-01T00:00:00` and print the equivalent Astropy `Time` object.",
                 "hint": "Use `spacepy.time.Ticktock()` and the `.APT` attribute.",
                 "task_number": 14
+            },
+            {
+                "task_number": 52,
+                "title": "Read a JSON-Headed ASCII File",
+                "description": "Using SpacePy, read the GPS particle file `ns71_150621_v1.10.ascii` from the SpacePy tutorial materials and print its data tree using `.tree(verbose=True, attrs=True)`.",
+                "hint": "Use `spacepy.datamodel.readJSONheadedASCII()` and the `.tree(verbose=True, attrs=True)` method."
             }
         ]
     },
@@ -156,6 +162,36 @@
                 "description": "Download the MMS MEC CDF file `mms1_mec_srvy_l2_ephts04d_20201011_v2.2.1.cdf`, load it with SpacePy, and print the metadata attributes for `mms1_mec_quat_eci_to_gse`.",
                 "hint": "Use `spacepy.datamodel.fromCDF()` and the variable's `.attrs`.",
                 "task_number": 25
+            },
+            {
+                "task_number": 53,
+                "title": "Load a Specific pysat Test Date",
+                "description": "Using pysat, instantiate the `pysat`/`testing` instrument, load data for January 1, 2009 by year and day-of-year, then print the loaded data shape and the list of available variable names.",
+                "hint": "Use `pysat.Instrument('pysat', 'testing')`, `inst.load(2009, 1)`, then print `inst.data.shape` and `inst.variables`."
+            },
+            {
+                "task_number": 54,
+                "title": "Search Sampled AIA 304 Å Data",
+                "description": "Using SunPy's Fido, search for SDO AIA 304 Å images between 2022-03-28T11:00 and 2022-03-28T14:00 with a 12-minute sampling cadence. Display the search results without downloading.",
+                "hint": "Use `Fido.search` with `a.Time`, `a.Instrument.aia`, `a.Wavelength(304*u.angstrom)`, and `a.Sample(12*u.minute)`."
+            },
+            {
+                "task_number": 55,
+                "title": "Convert GPS Time to UTC",
+                "description": "Using SpacePy, read `ns71_150621_v1.10.ascii` and convert the first `year` / `decimal_day` GPS timestamp into UTC using `Ticktock` with the GPS dtype.",
+                "hint": "Use `spacepy.datamodel.readJSONheadedASCII()`, `spacepy.time.doy2date`, and `spacepy.time.Ticktock(..., dtype='GPS')`. Read the UTC value from the `.UTC` attribute."
+            },
+            {
+                "task_number": 56,
+                "title": "Look Up Radioactive Half-Lives",
+                "description": "Using PlasmaPy, look up the half-lives of carbon-14 (`C-14`) and tritium (`T`). Print both values converted to years.",
+                "hint": "Use `plasmapy.particles.half_life()`, then call `.to(u.year)` on each result."
+            },
+            {
+                "task_number": 57,
+                "title": "Build a Custom Particle",
+                "description": "Using PlasmaPy, create a custom iron-like particle with mass `9e-26 kg`, charge `2.18e-18 C`, and symbol `'Fe 13.6+'`. Print its mass, charge, and charge number.",
+                "hint": "Use `plasmapy.particles.CustomParticle(9e-26*u.kg, 2.18e-18*u.C, symbol='Fe 13.6+')`. Read `.mass`, `.charge`, and `.charge_number`."
             }
         ]
     },
@@ -239,6 +275,36 @@
                 "description": "Using the same MMS MEC file, compute the GSE-to-GSM quaternion and rotate the first three `mms1_mec_r_gse` position vectors into GSM. Report the conversion error relative to `mms1_mec_r_gsm`.",
                 "hint": "Use `quaternionConjugate()`, `quaternionMultiply()`, and `quaternionRotateVector()`.",
                 "task_number": 38
+            },
+            {
+                "task_number": 58,
+                "title": "Plot ACE SWEPAM Variables",
+                "description": "Using pysat, register `pysatSpaceWeather`, instantiate the ACE SWEPAM `historic` instrument, load data from 2021-07-05 through 2021-07-08, and plot one variable over the loaded date range using axis labels pulled from `inst.meta`.",
+                "hint": "Use `pysat.utils.registry.register_by_module(pysatSpaceWeather.instruments)`, `pysat.Instrument('ace','swepam',tag='historic')`, `inst.load(date=..., end_date=...)`, and `inst.meta[var, inst.meta.labels.units]` for axis labels."
+            },
+            {
+                "task_number": 59,
+                "title": "Iterate Over pysat Testing Orbits",
+                "description": "Using pysat with the `testing` instrument, create a daily synthetic `file_date_range` for 2022 and local-time `orbit_info` before setting bounds from 2022-01-01 to 2022-01-14 with step `3D` and width `3 days`. Iterate over the resulting loaded segments and print the first and last timestamps for each.",
+                "hint": "Build `file_date_range = pandas.date_range(dt.datetime(2022,1,1), dt.datetime(2022,12,31), freq='D')`, define `orbit_info={'kind':'lt','index':'mlt','period':dt.timedelta(minutes=95)}`, instantiate with `pysat.Instrument('pysat','testing', file_date_range=file_date_range, orbit_info=orbit_info)`, set `inst.bounds = (start, stop, '3D', dt.timedelta(days=3))`, then loop with `for loop_inst in inst:`."
+            },
+            {
+                "task_number": 60,
+                "title": "Plot a GOES XRS TimeSeries",
+                "description": "Using SunPy's Fido, search and fetch GOES-17 XRS `flx1s` data for 2022-03-28T11:00 to 2022-03-28T14:00. Create a SunPy `TimeSeries` from the downloaded files and plot it.",
+                "hint": "Use `Fido.search` with `a.Instrument.xrs` and `a.goes.SatelliteNumber(17)`, then `Fido.fetch`, `sunpy.timeseries.TimeSeries(..., source='XRS')`, and `ts.plot()`."
+            },
+            {
+                "task_number": 61,
+                "title": "Plot Kp as a Level Plot",
+                "description": "Using SpacePy, build an hourly `tickrange` from 2015-06-21 to 2015-06-28, retrieve OMNI data for that range with `omni.get_omni()`, and produce a Kp level plot using `spacepy.plot.levelPlot()`.",
+                "hint": "Use `spacepy.time.tickrange('2015-06-21','2015-06-28', deltadays=1/24)`, `spacepy.omni.get_omni(ticks)`, and `spacepy.plot.levelPlot(...)`."
+            },
+            {
+                "task_number": 62,
+                "title": "Average Iron Charge State",
+                "description": "Using PlasmaPy, create a `ParticleList` containing the iron charge states `Fe 12+`, `Fe 13+`, and `Fe 14+`. Compute the average particle using `ParticleList.average_particle()`, and print the average mass and charge.",
+                "hint": "Use `plasmapy.particles.ParticleList(['Fe 12+','Fe 13+','Fe 14+'])`, then call `.average_particle()` and print its `.mass` and `.charge`."
             }
         ]
     },
@@ -299,6 +365,36 @@
                 "description": "Using the MMS MEC and FGM CDF files for `2020-10-11`, interpolate `mms1_fgm_b_dmpa_srvy_l2` onto the MEC timestamps, transform the magnetic field vector from DMPA to GSM, and plot the DMPA and GSM components side by side from `10:00` to `14:00` UTC.",
                 "hint": "Use `pycdf.CDF()`, `tOverlapHalf()`, `interpol()`, and the quaternion helpers.",
                 "task_number": 47
+            },
+            {
+                "task_number": 63,
+                "title": "Round-Trip Testing Data Through netCDF",
+                "description": "Using pysat, load the `pysat`/`testing` instrument for 2009-01-01, write the loaded data to `demo_test_file_2009001.nc`, then reload that file via the pysat netCDF instrument. Compare the row count and one metadata field between the original and round-tripped data.",
+                "hint": "Use `pysat.utils.io.inst_to_netcdf(inst, 'demo_test_file_2009001.nc')` to write, then `pysat.utils.io.load_netcdf` (or the pysat `netcdf` instrument) to reload. Compare `inst.data` shapes and one entry from `inst.meta`."
+            },
+            {
+                "task_number": 64,
+                "title": "Plot ICON MIGHTI Winds",
+                "description": "Using pysat, register `pysatNASA`, instantiate the ICON MIGHTI red and green vector-wind instruments, load data for 2020 day-of-year 2, and produce a plot of zonal and meridional wind components with `vmin=-250` and `vmax=250`.",
+                "hint": "Use `pysatNASA.instruments.icon_mighti`, `inst.load(2020, 2)`, and matplotlib subplots with `vmin=-250`, `vmax=250`."
+            },
+            {
+                "task_number": 65,
+                "title": "Crop and Mark an AIA Flare Region",
+                "description": "Using SunPy, fetch and load an SDO AIA 304 Å image close to 2023-03-20T15:29:53. Define a rectangular region of interest with bottom-left corner at `(-550, 300)` arcsec, width `500` arcsec, and height `400` arcsec. Plot the full Map with the region drawn, then crop the Map with `submap` and plot the cropped view.",
+                "hint": "Use `Fido.search`/`Fido.fetch`, `sunpy.map.Map`, `SkyCoord(..., frame=map.coordinate_frame)`, `map.draw_quadrangle()`, and `map.submap(bottom_left, width=..., height=...)`."
+            },
+            {
+                "task_number": 66,
+                "title": "Plot a Modeled Magnetosphere Slice",
+                "description": "Using SpacePy at epoch 2000-04-06, compute the T96 magnetic field on a GSE meridional grid spanning `x = -15` to `10` Re, `z = -8` to `8` Re, at `y = 0`. Plot the field magnitude with vector direction overlaid, and overlay the Shue magnetopause.",
+                "hint": "Use `spacepy.irbempy.get_Bfield` and `spacepy.empiricals.getMagnetopause`. Use matplotlib `quiver` for the vector overlay."
+            },
+            {
+                "task_number": 67,
+                "title": "Compare Plasma Beta Regimes",
+                "description": "Using PlasmaPy, compute plasma beta for three regimes: solar corona (`T = 1 MK`, `n = 1e9 cm^-3`, `B = 50 G`), photosphere (`T = 5800 K`, `n = 1e17 cm^-3`, `B = 400 G`), and solar wind at 1 AU (`T = 1e5 K`, `n = 5 cm^-3`, `B = 5 nT`). Print the beta value for each regime and identify which is highest.",
+                "hint": "Use `plasmapy.formulary.beta` with each `(T, n, B)` triple expressed as Astropy quantities."
             }
         ]
     },
@@ -329,6 +425,54 @@
                 "description": "Using the MMS MEC file, create a `Coords` object for MMS position from `2020-10-11 00:00` to `04:00` UTC, convert it to an Astropy `SkyCoord`, transform it to `AltAz` for Bear Mountain (`41.3 deg N`, `74.0 deg W`, `390 m`), and plot MMS altitude versus time. Report the UTC time and altitude of maximum elevation.",
                 "hint": "Use `Coords.to_skycoord()`, `Ticktock.APT`, `astropy.coordinates.EarthLocation`, and `AltAz`.",
                 "task_number": 51
+            },
+            {
+                "task_number": 68,
+                "title": "Summarize ICON IVM by Orbit",
+                "description": "Using pysat, instantiate the ICON IVM instrument with `orbit_info={'kind':'lt','index':'Magnetic_Local_Time'}`, load data for 2020-01-03, attach a custom function that adds a log ion density variable, and produce per-orbit panel plots for the first five orbits.",
+                "hint": "Register ICON IVM with `pysat.utils.registry.register(['pysatNASA.instruments.icon_ivm'])`, instantiate `pysat.Instrument('icon','ivm',inst_id='a', orbit_info=orbit_info)`, use `inst.custom_attach(...)` to add the log-density variable, and iterate via `for orbit in inst.orbits:`."
+            },
+            {
+                "task_number": 69,
+                "title": "Bin ICON IVM with pysatSeasons",
+                "description": "Using pysat, register ICON IVM, instantiate `pysat.Instrument('icon','ivm',inst_id='a')`, and set bounds from 2020-01-01 to 2020-01-05. Attach a custom function that creates `Log_Ion_Density = np.log10(inst['Ion_Density'])`, compute 2D medians of `Ion_Temperature` and `Log_Ion_Density` over an MLT axis of `[0, 24, 24]` and a longitude axis of `[0, 360, 30]` using `pysatSeasons.avg.median2D`, and plot both 2D distributions.",
+                "hint": "Use `pysat.utils.registry.register(['pysatNASA.instruments.icon_ivm'])`, `inst.custom_attach(add_log_dens)`, and `pysatSeasons.avg.median2D(inst, [0,24,24], 'Magnetic_Local_Time', [0,360,30], 'Longitude', ['Ion_Temperature','Log_Ion_Density'], return_data=True)`."
+            },
+            {
+                "task_number": 70,
+                "title": "Make a LASCO Running-Difference Movie",
+                "description": "Using SunPy, fetch SOHO/LASCO C2 images from 2023-03-20T13:00 to 2023-03-20T19:00. Load them as a Map sequence, exposure-normalize each frame, build a running-difference sequence by subtracting adjacent frames, and animate the result.",
+                "hint": "Use `Fido` with `a.Instrument.lasco` and `a.Detector('C2')`, then `sunpy.map.Map(..., sequence=True)`. Normalize each frame by its `EXPTIME`, build adjacent difference frames, and animate with matplotlib."
+            },
+            {
+                "task_number": 71,
+                "title": "Overlay HEK Flare Locations",
+                "description": "Using SunPy's Fido and HEK client, query HEK for solar flares with GOES class greater than C2.5 between 2022-03-28T11:00 and 2022-03-28T14:00. Build helioprojective coordinates from the event metadata and overlay the flare locations on co-temporal SDO AIA and STEREO/SECCHI 304 Å maps.",
+                "hint": "Search HEK with `a.hek.FL` plus a GOES class threshold, build `Helioprojective` coordinates from the event metadata, and use `ax.plot_coord(...)` to overlay on each map."
+            },
+            {
+                "task_number": 72,
+                "title": "Model Epoch-Dependent Cutoff Rigidity",
+                "description": "Using SpacePy, compute Störmer cutoff rigidity at epochs from 1900-01-01 to 2025-01-01 in 90-day steps, for L shells of 2, 3, 4, and 5, using IGRF dipole moments. Plot cutoff rigidity versus epoch with one line per L shell, and add a secondary y-axis showing the equivalent proton energy.",
+                "hint": "Follow the workflow in `SpacePy - Cutoff Rigidities.md`. Iterate over epochs and L shells, and use matplotlib `twinx` for the proton-energy axis."
+            },
+            {
+                "task_number": 73,
+                "title": "Compare SWMF North/South IMF Runs",
+                "description": "Open the northward and southward IMF SWMF tutorial outputs from `swmf_ssi_north` and `swmf_ssi_south`. For each case, load `GM/y=0_mhd_1_e20150321-060040-000_20150321-060510-000.outs` with `pybats.bats.Bats2d`, the matching `IE/it{time}_000.idl.gz` files with `pybats.rim.Iono`, and `GM/log_e20150321-054500.log` with `pybats.LogFile`. Compare pressure and FAC panels and Dst traces between the two IMF cases.",
+                "hint": "Use `spacepy.pybats.bats.Bats2d`, `spacepy.pybats.rim.Iono`, and `spacepy.pybats.LogFile`. Iterate IE files using each MHD frame's timestamp formatted as `IE/it{t_now:%y%m%d_%H%M%S}_000.idl.gz`."
+            },
+            {
+                "task_number": 74,
+                "title": "Summarize Ionization States",
+                "description": "Using PlasmaPy, create `IonizationState` objects for `He-4` with ionic fractions `[0.1, 0.7, 0.2]` and for `C` with ionic fractions `[0, 0.05, 0.15, 0.30, 0.30, 0.15, 0.05]`, both at total number density `1e7 cm^-3`. For each element, report the electron density `n_e`, the mean charge `Z_mean`, and the average ion.",
+                "hint": "Use `plasmapy.particles.IonizationState`. Read `.n_e` for electron density and `.Z_mean` for mean charge, and use `.average_ion()` for the average ion."
+            },
+            {
+                "task_number": 75,
+                "title": "Find Beta-Equals-One Field Strength",
+                "description": "For coronal plasma with `T = 1 MK` and `n = 1e9 cm^-3`, sweep magnetic field strength from `1 G` to `100 G` in log-spaced steps using PlasmaPy's `beta()`. Plot beta versus B on a log-log axis and report the B value where beta is closest to 1.",
+                "hint": "Use `numpy.logspace(0, 2, ...) * u.G`, then `plasmapy.formulary.beta(T, n, B)` with the array B. Plot with matplotlib `loglog` and use `np.argmin(np.abs(beta - 1))`."
             }
         ]
     }

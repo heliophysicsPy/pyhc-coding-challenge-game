@@ -13,6 +13,7 @@ Rung 1
 - 12 — Find PyHC Package Repository Contribution Rules — PlasmaPy; pysat; pySPEDAS
 - 13 — Identify PyHC Package License Types — HAPI Client; PlasmaPy; pysat; pySPEDAS; SpacePy; SunPy
 - 14 — Converting Ticktock to Astropy Time — SpacePy (Ticktock/Astropy Time)
+- 52 — Read a JSON-Headed ASCII File — SpacePy (datamodel/readJSONheadedASCII)
 
 Rung 2
 - 15 — Reading ACE HAPI Metadata — HAPI Client
@@ -26,6 +27,11 @@ Rung 2
 - 23 — Search for SDO AIA Data — SunPy (Fido)
 - 24 — Find the Citations for PyHC Package Repositories — HAPI Client; PlasmaPy; pysat; SpacePy; SunPy
 - 25 — Reading MMS Quaternion Metadata — SpacePy (datamodel/fromCDF)
+- 53 — Load a Specific pysat Test Date — pysat
+- 54 — Search Sampled AIA 304 Å Data — SunPy (Fido/attrs)
+- 55 — Convert GPS Time to UTC — SpacePy (Ticktock/GPS)
+- 56 — Look Up Radioactive Half-Lives — PlasmaPy (particles/half_life)
+- 57 — Build a Custom Particle — PlasmaPy (CustomParticle)
 
 Rung 3
 - 26 — Exploring HAPI Data and Metadata — HAPI Client
@@ -41,6 +47,11 @@ Rung 3
 - 36 — Plot the Latest Solar Image from SDO AIA — SunPy
 - 37 — Time String Conversions — (standard datetime/pytz; no PyHC package)
 - 38 — Rotating MMS Positions from GSE to GSM — SpacePy (quaternion helpers)
+- 58 — Plot ACE SWEPAM Variables — pysat (with pysatSpaceWeather)
+- 59 — Iterate Over pysat Testing Orbits — pysat (bounds iteration)
+- 60 — Plot a GOES XRS TimeSeries — SunPy (Fido + TimeSeries)
+- 61 — Plot Kp as a Level Plot — SpacePy (omni/levelPlot)
+- 62 — Average Iron Charge State — PlasmaPy (ParticleList)
 
 Rung 4
 - 39 — Plotting Total Solar Irradiance HAPI Data — HAPI Client (hapiplot)
@@ -52,9 +63,22 @@ Rung 4
 - 45 — Make a Movie of Today's SDO AIA Solar Imagery — SunPy
 - 46 — Difference Image — SunPy
 - 47 — Transforming MMS FGM Data to GSM — SpacePy (MMS quaternion workflow)
+- 63 — Round-Trip Testing Data Through netCDF — pysat (utils.io)
+- 64 — Plot ICON MIGHTI Winds — pysat (with pysatNASA)
+- 65 — Crop and Mark an AIA Flare Region — SunPy (Map/SkyCoord/submap)
+- 66 — Plot a Modeled Magnetosphere Slice — SpacePy (irbempy/empiricals)
+- 67 — Compare Plasma Beta Regimes — PlasmaPy (formulary/beta)
 
 Rung 5
 - 48 — Interpolating Time — HAPI Client; SpacePy (toolbox interpol); plus pandas/NumPy interpolation
 - 49 — Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images — SunPy (with reproject)
 - 50 — Compute OMNI Plasma Beta with PlasmaPy — PlasmaPy; HAPI Client
 - 51 — Tracking MMS from Bear Mountain — SpacePy; Astropy (Coords.to_skycoord/AltAz)
+- 68 — Summarize ICON IVM by Orbit — pysat (with pysatNASA; orbit_info/custom_attach)
+- 69 — Bin ICON IVM with pysatSeasons — pysat (with pysatSeasons; avg.median2D)
+- 70 — Make a LASCO Running-Difference Movie — SunPy (LASCO/MapSequence)
+- 71 — Overlay HEK Flare Locations — SunPy (HEK + AIA + SECCHI)
+- 72 — Model Epoch-Dependent Cutoff Rigidity — SpacePy (Störmer/IGRF)
+- 73 — Compare SWMF North/South IMF Runs — SpacePy (pybats/Bats2d/rim/LogFile)
+- 74 — Summarize Ionization States — PlasmaPy (IonizationState)
+- 75 — Find Beta-Equals-One Field Strength — PlasmaPy (formulary/beta)

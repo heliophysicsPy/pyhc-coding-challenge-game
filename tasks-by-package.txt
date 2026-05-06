@@ -25,14 +25,21 @@ pySPEDAS [11] (Updated notebooks expected by March 31)
   - 43 T89 Field Modeling Versus THEMIS Observations
   - 44 T96 Field Modeling Versus MMS Observations
 
-pysat (includes pysatMadrigal/pysatNASA) [5]
+pysat (includes pysatMadrigal/pysatNASA/pysatSpaceWeather/pysatSeasons) [12]
   - 7 Set the pysat "data_dirs" Parameter
   - 8 Display Available pysatMadrigal Instruments
   - 21 Print a Test pysat Instrument
   - 22 Register pysatNASA Instruments with pysat
   - 35 Create an ICON IVM Instrument and Load Data
+  - 53 Load a Specific pysat Test Date
+  - 58 Plot ACE SWEPAM Variables
+  - 59 Iterate Over pysat Testing Orbits
+  - 63 Round-Trip Testing Data Through netCDF
+  - 64 Plot ICON MIGHTI Winds
+  - 68 Summarize ICON IVM by Orbit
+  - 69 Bin ICON IVM with pysatSeasons
 
-SunPy [7]
+SunPy [12]
   - 9 List Available SunPy Remote Data Sources
   - 10 List Available SunPy Instruments
   - 23 Search for SDO AIA Data
@@ -40,22 +47,39 @@ SunPy [7]
   - 45 Make a Movie of Today's SDO AIA Solar Imagery
   - 46 Difference Image
   - 49 Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images
+  - 54 Search Sampled AIA 304 Å Data
+  - 60 Plot a GOES XRS TimeSeries
+  - 65 Crop and Mark an AIA Flare Region
+  - 70 Make a LASCO Running-Difference Movie
+  - 71 Overlay HEK Flare Locations
 
-SpacePy [6] (2024 MMS/time/coords materials; maintainer review pending)
+SpacePy [12] (2024 MMS/time/coords materials; maintainer review pending)
   - 14 Converting Ticktock to Astropy Time
   - 25 Reading MMS Quaternion Metadata
   - 38 Rotating MMS Positions from GSE to GSM
   - 41 Coordinate Transform with SpacePy
   - 47 Transforming MMS FGM Data to GSM
   - 51 Tracking MMS from Bear Mountain
+  - 52 Read a JSON-Headed ASCII File
+  - 55 Convert GPS Time to UTC
+  - 61 Plot Kp as a Level Plot
+  - 66 Plot a Modeled Magnetosphere Slice
+  - 72 Model Epoch-Dependent Cutoff Rigidity
+  - 73 Compare SWMF North/South IMF Runs
 
-PlasmaPy [6]
+PlasmaPy [12]
   - 4 Reading Basic Particle Information
   - 18 Reading Particle Properties
   - 29 Ionization and Recombination with Particle Objects
   - 30 Calculating Fusion Energy
   - 42 Magnetospheric Plasma Scales
   - 50 Compute OMNI Plasma Beta with PlasmaPy (also HAPI Client)
+  - 56 Look Up Radioactive Half-Lives
+  - 57 Build a Custom Particle
+  - 62 Average Iron Charge State
+  - 67 Compare Plasma Beta Regimes
+  - 74 Summarize Ionization States
+  - 75 Find Beta-Equals-One Field Strength
 
 Misc. (cross-package or not a PyHC lib) [6]
   - 11 Count Closed PyHC Package Issues (HAPI, PlasmaPy, pysat, pySPEDAS, SpacePy, SunPy)

@@ -5,7 +5,7 @@ Notes
 - A task may appear in both the "AI-generated" section and the "Maintainer-reviewed/approved" section.
 - Tasks not listed under "AI-generated" are currently treated as pre-tracker / not marked AI-generated.
 
-AI-generated [11] (all currently pending maintainer review)
+AI-generated [35] (all currently pending maintainer review)
 - 4 - Reading Basic Particle Information - PlasmaPy
 - 14 - Converting Ticktock to Astropy Time - SpacePy
 - 18 - Reading Particle Properties - PlasmaPy
@@ -17,6 +17,30 @@ AI-generated [11] (all currently pending maintainer review)
 - 47 - Transforming MMS FGM Data to GSM - SpacePy
 - 50 - Compute OMNI Plasma Beta with PlasmaPy - PlasmaPy
 - 51 - Tracking MMS from Bear Mountain - SpacePy
+- 52 - Read a JSON-Headed ASCII File - SpacePy
+- 53 - Load a Specific pysat Test Date - pysat
+- 54 - Search Sampled AIA 304 Å Data - SunPy
+- 55 - Convert GPS Time to UTC - SpacePy
+- 56 - Look Up Radioactive Half-Lives - PlasmaPy
+- 57 - Build a Custom Particle - PlasmaPy
+- 58 - Plot ACE SWEPAM Variables - pysat
+- 59 - Iterate Over pysat Testing Orbits - pysat
+- 60 - Plot a GOES XRS TimeSeries - SunPy
+- 61 - Plot Kp as a Level Plot - SpacePy
+- 62 - Average Iron Charge State - PlasmaPy
+- 63 - Round-Trip Testing Data Through netCDF - pysat
+- 64 - Plot ICON MIGHTI Winds - pysat
+- 65 - Crop and Mark an AIA Flare Region - SunPy
+- 66 - Plot a Modeled Magnetosphere Slice - SpacePy
+- 67 - Compare Plasma Beta Regimes - PlasmaPy
+- 68 - Summarize ICON IVM by Orbit - pysat
+- 69 - Bin ICON IVM with pysatSeasons - pysat
+- 70 - Make a LASCO Running-Difference Movie - SunPy
+- 71 - Overlay HEK Flare Locations - SunPy
+- 72 - Model Epoch-Dependent Cutoff Rigidity - SpacePy
+- 73 - Compare SWMF North/South IMF Runs - SpacePy
+- 74 - Summarize Ionization States - PlasmaPy
+- 75 - Find Beta-Equals-One Field Strength - PlasmaPy
 
 Maintainer-reviewed/approved [0]
 - <NONE YET>
