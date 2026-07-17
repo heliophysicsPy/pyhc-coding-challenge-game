@@ -1,0 +1,90 @@
+HAPI Client [12] (don't anticipate any major changes to the notebooks)
+  - 1 [Rung 1] List Available HAPI Server URLs
+  - 2 [Rung 1] List Available CDAWeb Datasets
+  - 3 [Rung 1] Reading OMNI HAPI Metadata
+  - 15 [Rung 2] Reading ACE HAPI Metadata
+  - 16 [Rung 2] Reading ACE HAPI Data
+  - 17 [Rung 2] Reading OMNI HAPI Data
+  - 26 [Rung 3] Exploring HAPI Data and Metadata
+  - 27 [Rung 3] Plotting HAPI Data
+  - 39 [Rung 4] Plotting Total Solar Irradiance HAPI Data
+  - 40 [Rung 4] Converting to Pandas DataFrame
+  - 41 [Rung 4] Coordinate Transform with SpacePy (also SpacePy)
+  - 50 [Rung 5] Compute OMNI Plasma Beta with PlasmaPy (also PlasmaPy)
+
+pySPEDAS [11] (Updated notebooks expected by March 31)
+  - 5 [Rung 1] Set SPEDAS_DATA_DIR & Import pySPEDAS, PyTplot
+  - 6 [Rung 1] Load and Plot MMS FGM data
+  - 19 [Rung 2] Extract Data From tplot Variables
+  - 20 [Rung 2] Plot Six Hours of Parker Solar Probe data
+  - 28 [Rung 3] Plot HAPI data with pySPEDAS/PyTplot
+  - 31 [Rung 3] pySPEDAS/PyTplot: Use Simple Analysis Tool
+  - 32 [Rung 3] PyTplot Plot Customization: Line Colors
+  - 33 [Rung 3] Magnetic Field Modeling: T89 Model
+  - 34 [Rung 3] Magnetic Field Modeling: T96 model
+  - 43 [Rung 4] T89 Field Modeling Versus THEMIS Observations
+  - 44 [Rung 4] T96 Field Modeling Versus MMS Observations
+
+pysat (includes pysatMadrigal/pysatNASA/pysatSpaceWeather/pysatSeasons) [12]
+  - 7 [Rung 1] Set the pysat "data_dirs" Parameter
+  - 8 [Rung 1] Display Available pysatMadrigal Instruments
+  - 21 [Rung 2] Print a Test pysat Instrument
+  - 22 [Rung 2] Register pysatNASA Instruments with pysat
+  - 35 [Rung 3] Create an ICON IVM Instrument and Load Data
+  - 53 [Rung 2] Load a Specific pysat Test Date
+  - 58 [Rung 3] Plot ACE SWEPAM Variables
+  - 59 [Rung 3] Iterate Over pysat Testing Orbits
+  - 63 [Rung 4] Round-Trip Testing Data Through netCDF
+  - 64 [Rung 4] Plot ICON MIGHTI Winds
+  - 68 [Rung 5] Summarize ICON IVM by Orbit
+  - 69 [Rung 5] Bin ICON IVM with pysatSeasons
+
+SunPy [12]
+  - 9 [Rung 1] List Available SunPy Remote Data Sources
+  - 10 [Rung 1] List Available SunPy Instruments
+  - 23 [Rung 2] Search for SDO AIA Data
+  - 36 [Rung 3] Plot the Latest Solar Image from SDO AIA
+  - 45 [Rung 4] Make a Movie of Today's SDO AIA Solar Imagery
+  - 46 [Rung 4] Difference Image
+  - 49 [Rung 5] Comparing Perspectives: Reproject SDO AIA and STEREO EUVI Solar Images
+  - 54 [Rung 2] Search Sampled AIA 304 Å Data
+  - 60 [Rung 3] Plot a GOES XRS TimeSeries
+  - 65 [Rung 4] Crop and Mark an AIA Flare Region
+  - 70 [Rung 5] Make a LASCO Running-Difference Movie
+  - 71 [Rung 5] Overlay HEK Flare Locations
+
+SpacePy [12] (2024 MMS/time/coords materials; maintainer review pending)
+  - 14 [Rung 1] Converting Ticktock to Astropy Time
+  - 25 [Rung 2] Reading MMS Quaternion Metadata
+  - 38 [Rung 3] Rotating MMS Positions from GSE to GSM
+  - 41 [Rung 4] Coordinate Transform with SpacePy
+  - 47 [Rung 4] Transforming MMS FGM Data to GSM
+  - 51 [Rung 5] Tracking MMS from Bear Mountain
+  - 52 [Rung 1] Read a JSON-Headed ASCII File
+  - 55 [Rung 2] Convert GPS Time to UTC
+  - 61 [Rung 3] Plot Kp as a Level Plot
+  - 66 [Rung 4] Plot a Modeled Magnetosphere Slice
+  - 72 [Rung 5] Model Epoch-Dependent Cutoff Rigidity
+  - 73 [Rung 5] Compare SWMF North/South IMF Runs
+
+PlasmaPy [12]
+  - 4 [Rung 1] Reading Basic Particle Information
+  - 18 [Rung 2] Reading Particle Properties
+  - 29 [Rung 3] Ionization and Recombination with Particle Objects
+  - 30 [Rung 3] Calculating Fusion Energy
+  - 42 [Rung 4] Magnetospheric Plasma Scales
+  - 50 [Rung 5] Compute OMNI Plasma Beta with PlasmaPy (also HAPI Client)
+  - 56 [Rung 2] Look Up Radioactive Half-Lives
+  - 57 [Rung 2] Build a Custom Particle
+  - 62 [Rung 3] Average Iron Charge State
+  - 67 [Rung 4] Compare Plasma Beta Regimes
+  - 74 [Rung 5] Summarize Ionization States
+  - 75 [Rung 5] Find Beta-Equals-One Field Strength
+
+Misc. (cross-package or not a PyHC lib) [6]
+  - 11 [Rung 1] Count Closed PyHC Package Issues (HAPI, PlasmaPy, pysat, pySPEDAS, SpacePy, SunPy)
+  - 12 [Rung 1] Find PyHC Package Repository Contribution Rules (PlasmaPy, pysat, pySPEDAS)
+  - 13 [Rung 1] Identify PyHC Package License Types (HAPI, PlasmaPy, pysat, pySPEDAS, SpacePy, SunPy)
+  - 24 [Rung 2] Find the Citations for PyHC Package Repositories (HAPI, PlasmaPy, pysat, SpacePy, SunPy)
+  - 37 [Rung 3] Time String Conversions (datetime/pytz/dateutil)
+  - 48 [Rung 5] Interpolating Time (HAPI; SpacePy; pandas/NumPy)
