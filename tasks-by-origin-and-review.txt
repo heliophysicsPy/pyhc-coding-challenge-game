@@ -4,16 +4,18 @@ Notes
 - This file tracks two independent things: provenance and maintainer review.
 - A task may appear in both the "AI-generated" section and the "Maintainer-reviewed/approved" section.
 - Tasks not listed under "AI-generated" are currently treated as pre-tracker / not marked AI-generated.
+- "Maintainer feedback applied" lists tasks a maintainer asked to change that have since been revised; they move to "Maintainer-reviewed/approved" once the maintainer signs off on the revisions.
+- PlasmaPy (issue #6): maintainer feedback from 2026-09-25 was applied on 2026-10-23. Tasks 50 and 75 were deferred by the maintainer and 56 received no comment, so those three are still awaiting a first review.
 
 AI-generated [35] (all currently pending maintainer review)
 - 4 - Reading Basic Particle Information - PlasmaPy
 - 14 - Converting Ticktock to Astropy Time - SpacePy
-- 18 - Reading Particle Properties - PlasmaPy
+- 18 - Reading Particle Attributes - PlasmaPy
 - 25 - Reading MMS Quaternion Metadata - SpacePy
 - 29 - Ionization and Recombination with Particle Objects - PlasmaPy
-- 30 - Calculating Fusion Energy - PlasmaPy
+- 30 - Calculating CNO-Cycle Fusion Energy - PlasmaPy
 - 38 - Rotating MMS Positions from GSE to GSM - SpacePy
-- 42 - Magnetospheric Plasma Scales - PlasmaPy
+- 42 - Solar Wind Plasma Scales - PlasmaPy
 - 47 - Transforming MMS FGM Data to GSM - SpacePy
 - 50 - Compute OMNI Plasma Beta with PlasmaPy - PlasmaPy
 - 51 - Tracking MMS from Bear Mountain - SpacePy
@@ -27,12 +29,12 @@ AI-generated [35] (all currently pending maintainer review)
 - 59 - Iterate Over pysat Testing Orbits - pysat
 - 60 - Plot a GOES XRS TimeSeries - SunPy
 - 61 - Plot Kp as a Level Plot - SpacePy
-- 62 - Average Iron Charge State - PlasmaPy
+- 62 - Average Carbon Charge State - PlasmaPy
 - 63 - Round-Trip Testing Data Through netCDF - pysat
 - 64 - Plot ICON MIGHTI Winds - pysat
 - 65 - Crop and Mark an AIA Flare Region - SunPy
 - 66 - Plot a Modeled Magnetosphere Slice - SpacePy
-- 67 - Compare Plasma Beta Regimes - PlasmaPy
+- 67 - Rank Coronal Plasma Length Scales - PlasmaPy
 - 68 - Summarize ICON IVM by Orbit - pysat
 - 69 - Bin ICON IVM with pysatSeasons - pysat
 - 70 - Make a LASCO Running-Difference Movie - SunPy
@@ -41,6 +43,17 @@ AI-generated [35] (all currently pending maintainer review)
 - 73 - Compare SWMF North/South IMF Runs - SpacePy
 - 74 - Summarize Ionization States - PlasmaPy
 - 75 - Find Beta-Equals-One Field Strength - PlasmaPy
+
+Maintainer feedback applied, awaiting re-review [9]
+- 4 - Reading Basic Particle Information - PlasmaPy
+- 18 - Reading Particle Attributes - PlasmaPy
+- 29 - Ionization and Recombination with Particle Objects - PlasmaPy
+- 30 - Calculating CNO-Cycle Fusion Energy - PlasmaPy
+- 42 - Solar Wind Plasma Scales - PlasmaPy
+- 57 - Build a Custom Particle - PlasmaPy
+- 62 - Average Carbon Charge State - PlasmaPy
+- 67 - Rank Coronal Plasma Length Scales - PlasmaPy
+- 74 - Summarize Ionization States - PlasmaPy
 
 Maintainer-reviewed/approved [0]
 - <NONE YET>

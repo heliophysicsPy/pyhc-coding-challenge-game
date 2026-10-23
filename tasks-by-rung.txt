@@ -19,7 +19,7 @@ Rung 2
 - 15 — Reading ACE HAPI Metadata — HAPI Client
 - 16 — Reading ACE HAPI Data — HAPI Client
 - 17 — Reading OMNI HAPI Data — HAPI Client
-- 18 — Reading Particle Properties — PlasmaPy
+- 18 — Reading Particle Attributes — PlasmaPy
 - 19 — Extract Data From tplot Variables — pySPEDAS/PyTplot
 - 20 — Plot Six Hours of Parker Solar Probe data — pySPEDAS/PyTplot
 - 21 — Print a Test pysat Instrument — pysat
@@ -38,7 +38,7 @@ Rung 3
 - 27 — Plotting HAPI Data — HAPI Client (hapiplot)
 - 28 — Plot HAPI data with pySPEDAS/PyTplot — pySPEDAS/PyTplot (pyhapi)
 - 29 — Ionization and Recombination with Particle Objects — PlasmaPy
-- 30 — Calculating Fusion Energy — PlasmaPy
+- 30 — Calculating CNO-Cycle Fusion Energy — PlasmaPy
 - 31 — pySPEDAS/PyTplot: Use Simple Analysis Tool — pySPEDAS/PyTplot
 - 32 — PyTplot Plot Customization: Line Colors — pySPEDAS/PyTplot
 - 33 — Magnetic Field Modeling: T89 Model — pySPEDAS (geopack/T89)
@@ -51,13 +51,13 @@ Rung 3
 - 59 — Iterate Over pysat Testing Orbits — pysat (bounds iteration)
 - 60 — Plot a GOES XRS TimeSeries — SunPy (Fido + TimeSeries)
 - 61 — Plot Kp as a Level Plot — SpacePy (omni/levelPlot)
-- 62 — Average Iron Charge State — PlasmaPy (ParticleList)
+- 62 — Average Carbon Charge State — PlasmaPy (ParticleList)
 
 Rung 4
 - 39 — Plotting Total Solar Irradiance HAPI Data — HAPI Client (hapiplot)
 - 40 — Converting to Pandas DataFrame — HAPI Client (hapitime2datetime)
 - 41 — Coordinate Transform with SpacePy — HAPI Client; SpacePy
-- 42 — Magnetospheric Plasma Scales — PlasmaPy
+- 42 — Solar Wind Plasma Scales — PlasmaPy
 - 43 — T89 Field Modeling Versus THEMIS Observations — pySPEDAS/PyTplot (geopack T89)
 - 44 — T96 Field Modeling Versus MMS Observations — pySPEDAS/PyTplot (geopack T96)
 - 45 — Make a Movie of Today's SDO AIA Solar Imagery — SunPy
@@ -67,7 +67,7 @@ Rung 4
 - 64 — Plot ICON MIGHTI Winds — pysat (with pysatNASA)
 - 65 — Crop and Mark an AIA Flare Region — SunPy (Map/SkyCoord/submap)
 - 66 — Plot a Modeled Magnetosphere Slice — SpacePy (irbempy/empiricals)
-- 67 — Compare Plasma Beta Regimes — PlasmaPy (formulary/beta)
+- 67 — Rank Coronal Plasma Length Scales — PlasmaPy (formulary/lengths)
 
 Rung 5
 - 48 — Interpolating Time — HAPI Client; SpacePy (toolbox interpol); plus pandas/NumPy interpolation

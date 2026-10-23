@@ -67,17 +67,17 @@ SpacePy [12] (2024 MMS/time/coords materials; maintainer review pending)
   - 72 [Rung 5] Model Epoch-Dependent Cutoff Rigidity
   - 73 [Rung 5] Compare SWMF North/South IMF Runs
 
-PlasmaPy [12]
+PlasmaPy [12] (maintainer feedback from issue #6 applied; re-review pending)
   - 4 [Rung 1] Reading Basic Particle Information
-  - 18 [Rung 2] Reading Particle Properties
+  - 18 [Rung 2] Reading Particle Attributes
   - 29 [Rung 3] Ionization and Recombination with Particle Objects
-  - 30 [Rung 3] Calculating Fusion Energy
-  - 42 [Rung 4] Magnetospheric Plasma Scales
+  - 30 [Rung 3] Calculating CNO-Cycle Fusion Energy
+  - 42 [Rung 4] Solar Wind Plasma Scales
   - 50 [Rung 5] Compute OMNI Plasma Beta with PlasmaPy (also HAPI Client)
   - 56 [Rung 2] Look Up Radioactive Half-Lives
   - 57 [Rung 2] Build a Custom Particle
-  - 62 [Rung 3] Average Iron Charge State
-  - 67 [Rung 4] Compare Plasma Beta Regimes
+  - 62 [Rung 3] Average Carbon Charge State
+  - 67 [Rung 4] Rank Coronal Plasma Length Scales
   - 74 [Rung 5] Summarize Ionization States
   - 75 [Rung 5] Find Beta-Equals-One Field Strength
 

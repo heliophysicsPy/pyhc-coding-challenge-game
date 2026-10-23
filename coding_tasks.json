@@ -23,7 +23,7 @@
             {
                 "task_number": 4,
                 "title": "Reading Basic Particle Information",
-                "description": "Using PlasmaPy, print the atomic number of iron (\"Fe\") and the element name associated with atomic number 26.",
+                "description": "Using PlasmaPy, print the atomic number of neon (\"Ne\") and the element name associated with atomic number 12.",
                 "hint": "Use `atomic_number()` and `element_name()`."
             },
             {
@@ -117,9 +117,9 @@
             },
             {
                 "task_number": 18,
-                "title": "Reading Particle Properties",
-                "description": "Using PlasmaPy, determine the charge number and particle mass of the ion \"Fe-56 13+\".",
-                "hint": "Use `charge_number()` and `particle_mass()`."
+                "title": "Reading Particle Attributes",
+                "description": "Using PlasmaPy, create a `Particle` object for the solar wind oxygen ion \"O 6+\", then use its attributes to report its charge number and mass.",
+                "hint": "Create the particle with `Particle()`, then read its `.charge_number` and `.mass` attributes."
             },
             {
                 "task_number": 19,
@@ -190,8 +190,8 @@
             {
                 "task_number": 57,
                 "title": "Build a Custom Particle",
-                "description": "Using PlasmaPy, create a custom iron-like particle with mass `9e-26 kg`, charge `2.18e-18 C`, and symbol `'Fe 13.6+'`. Print its mass, charge, and charge number.",
-                "hint": "Use `plasmapy.particles.CustomParticle(9e-26*u.kg, 2.18e-18*u.C, symbol='Fe 13.6+')`. Read `.mass`, `.charge`, and `.charge_number`."
+                "description": "Using PlasmaPy, create a custom particle representing a charged dust grain with mass `1e-15 kg`, charge `-5e-17 C`, and symbol `'dust'`. Print its mass, charge, and charge number.",
+                "hint": "Use `plasmapy.particles.CustomParticle()` with Astropy quantities for the mass and charge. Read `.mass`, `.charge`, and `.charge_number`."
             }
         ]
     },
@@ -219,14 +219,14 @@
             {
                 "task_number": 29,
                 "title": "Ionization and Recombination with Particle Objects",
-                "description": "Using PlasmaPy particle objects, create a neutral deuterium particle and ionize it once. Then create an alpha particle and recombine it twice. Print the resulting particles.",
+                "description": "Using PlasmaPy particle objects, create a neutral nitrogen atom and ionize it three times. Then create a fully ionized neon ion and recombine it twice. Print the resulting particles.",
                 "hint": "Use `Particle()`, `ionize()`, and `recombine()`."
             },
             {
                 "task_number": 30,
-                "title": "Calculating Fusion Energy",
-                "description": "Using PlasmaPy, calculate the energy released by the deuteron-triton fusion reaction \"D+ + T+ -> alpha + n\" and express the result in MeV.",
-                "hint": "Create `Particle` objects, use the `>` operator, and convert the result with `.to(\"MeV\")`."
+                "title": "Calculating CNO-Cycle Fusion Energy",
+                "description": "Using PlasmaPy, calculate the energy released by the final step of the CNO-I cycle, \"N-15 + p --> C-12 + alpha\", and express the result in MeV.",
+                "hint": "Use `nuclear_reaction_energy()` and convert the result with `.to(\"MeV\")`."
             },
             {
                 "task_number": 31,
@@ -302,9 +302,9 @@
             },
             {
                 "task_number": 62,
-                "title": "Average Iron Charge State",
-                "description": "Using PlasmaPy, create a `ParticleList` containing the iron charge states `Fe 12+`, `Fe 13+`, and `Fe 14+`. Compute the average particle using `ParticleList.average_particle()`, and print the average mass and charge.",
-                "hint": "Use `plasmapy.particles.ParticleList(['Fe 12+','Fe 13+','Fe 14+'])`, then call `.average_particle()` and print its `.mass` and `.charge`."
+                "title": "Average Carbon Charge State",
+                "description": "Using PlasmaPy, create a `ParticleList` containing the carbon charge states `C 4+`, `C 5+`, and `C 6+`, with relative abundances `0.1`, `0.4`, and `0.5`. Compute the abundance-weighted average particle and print its mass, charge, and charge number.",
+                "hint": "Use `plasmapy.particles.ParticleList()`, then pass the abundances to `.average_particle()`."
             }
         ]
     },
@@ -332,9 +332,9 @@
             },
             {
                 "task_number": 42,
-                "title": "Magnetospheric Plasma Scales",
-                "description": "Assume a plasma with n = 1 cm^-3, B = 5 nT, and T = 10^4.5 K. Using PlasmaPy, calculate the proton inertial length, electron inertial length, proton gyroradius, electron gyroradius, and lower hybrid frequency. Report the lengths in km and the frequency in Hz.",
-                "hint": "Use `inertial_length()`, `gyroradius()`, and `lower_hybrid_frequency()`. Pass `to_hz=True` to `lower_hybrid_frequency()` to get the result in Hz."
+                "title": "Solar Wind Plasma Scales",
+                "description": "Assume a solar wind plasma at 1 AU with n = 7 cm^-3, B = 6 nT, proton temperature T_p = 1e5 K, and electron temperature T_e = 1.5e5 K. Using PlasmaPy, calculate the proton inertial length, electron inertial length, proton gyroradius, and electron gyroradius. Report all four lengths in km.",
+                "hint": "Use `inertial_length()` and `gyroradius()`. Each species' gyroradius depends on its own temperature."
             },
             {
                 "task_number": 43,
@@ -392,9 +392,9 @@
             },
             {
                 "task_number": 67,
-                "title": "Compare Plasma Beta Regimes",
-                "description": "Using PlasmaPy, compute plasma beta for three regimes: solar corona (`T = 1 MK`, `n = 1e9 cm^-3`, `B = 50 G`), photosphere (`T = 5800 K`, `n = 1e17 cm^-3`, `B = 400 G`), and solar wind at 1 AU (`T = 1e5 K`, `n = 5 cm^-3`, `B = 5 nT`). Print the beta value for each regime and identify which is highest.",
-                "hint": "Use `plasmapy.formulary.beta` with each `(T, n, B)` triple expressed as Astropy quantities."
+                "title": "Rank Coronal Plasma Length Scales",
+                "description": "Assume a quiet-Sun coronal plasma with `n = 1e8 cm^-3`, `B = 10 G`, and `T = 1.5 MK` for both electrons and protons. Using PlasmaPy, calculate the Debye length, the proton and electron inertial lengths, and the proton and electron gyroradii. List the five length scales in order from smallest to largest.",
+                "hint": "Use `Debye_length()`, `inertial_length()`, and `gyroradius()`, and convert everything to the same unit before comparing."
             }
         ]
     },
@@ -465,7 +465,7 @@
             {
                 "task_number": 74,
                 "title": "Summarize Ionization States",
-                "description": "Using PlasmaPy, create `IonizationState` objects for `He-4` with ionic fractions `[0.1, 0.7, 0.2]` and for `C` with ionic fractions `[0, 0.05, 0.15, 0.30, 0.30, 0.15, 0.05]`, both at total number density `1e7 cm^-3`. For each element, report the electron density `n_e`, the mean charge `Z_mean`, and the average ion.",
+                "description": "Using PlasmaPy, create `IonizationState` objects for `He-4` with ionic fractions `[0.02, 0.18, 0.80]` at total number density `4e5 cm^-3`, and for `C` with ionic fractions `[0, 0, 0.01, 0.04, 0.35, 0.40, 0.20]` at total number density `2e3 cm^-3`. For each element, report the electron density `n_e`, the mean charge `Z_mean`, and the average ion.",
                 "hint": "Use `plasmapy.particles.IonizationState`. Read `.n_e` for electron density and `.Z_mean` for mean charge, and use `.average_ion()` for the average ion."
             },
             {
